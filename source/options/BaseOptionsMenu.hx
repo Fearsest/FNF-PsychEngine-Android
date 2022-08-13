@@ -130,12 +130,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		#end
 	}
         override function create()
-	{	
-		trace('INGAME MODE : ' + ingame);
-		if(startSong)
-			FlxG.sound.playMusic(Paths.music("title", "exclude"), 1, true);
-		else
-			startSong = true;
+	{
+	    FlxG.sound.playMusic(Paths.music('title'), 1, true);;
     }
 
 	public function addOption(option:Option) {
