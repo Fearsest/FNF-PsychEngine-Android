@@ -860,7 +860,7 @@ class PlayState extends MusicBeatState
 
 		for (folder in foldersToCheck)
 		{
-			if(FileSystem.exists(folder))
+			if(OpenFlAssets.exists(folder))
 			{
 				for (file in FileSystem.readDirectory(folder))
 				{
@@ -1197,7 +1197,7 @@ class PlayState extends MusicBeatState
 
 		for (folder in foldersToCheck)
 		{
-			if(FileSystem.exists(folder))
+			if(OpenFlAssets.exists(folder))
 			{
 				for (file in FileSystem.readDirectory(folder))
 				{
