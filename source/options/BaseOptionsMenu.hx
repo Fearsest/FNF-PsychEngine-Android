@@ -129,6 +129,14 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		addPadCamera();
 		#end
 	}
+        override function create()
+	{	
+		trace('INGAME MODE : ' + ingame);
+		if(startSong)
+			FlxG.sound.playMusic(Paths.music("title", "exclude"), 1, true);
+		else
+			startSong = true;
+    }
 
 	public function addOption(option:Option) {
 		if(optionsArray == null || optionsArray.length < 1) optionsArray = [];
