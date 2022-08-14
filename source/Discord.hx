@@ -1,7 +1,8 @@
-#if desktop
 package;
 
+#if sys
 import Sys.sleep;
+#end
 import discord_rpc.DiscordRpc;
 
 #if LUA_ALLOWED
@@ -28,7 +29,9 @@ class DiscordClient
 		while (true)
 		{
 			DiscordRpc.process();
+			#if sys
 			sleep(2);
+			#end
 			//trace("Discord Client Update");
 		}
 
@@ -87,7 +90,7 @@ class DiscordClient
 			smallImageKey : smallImageKey,
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),
-            endTimestamp : Std.int(endTimestamp / 1000)
+			endTimestamp : Std.int(endTimestamp / 1000)
 		});
 
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
@@ -101,4 +104,3 @@ class DiscordClient
 	}
 	#end
 }
-#end
