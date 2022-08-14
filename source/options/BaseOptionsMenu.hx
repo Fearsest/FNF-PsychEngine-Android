@@ -44,6 +44,16 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	public var title:String;
 	public var rpcTitle:String;
 
+    override public function create()
+	{
+	    #if PRELOAD_ALL
+	   {
+	    FlxG.sound.playMusic(Paths.music('title'), 1, true);;
+	   }
+	    #end
+	    super.create();
+    }
+
 	public function new()
 	{
 		super();
@@ -129,13 +139,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		addPadCamera();
 		#end
 	}
-    override public function create()
-	{
-	    #if PRELOAD_ALL
-	    FlxG.sound.playMusic(Paths.music('title'), 1, true);;
-	    #end
-	    super.create();
-    }
 
 	public function addOption(option:Option) {
 		if(optionsArray == null || optionsArray.length < 1) optionsArray = [];
