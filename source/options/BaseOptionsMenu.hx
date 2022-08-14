@@ -43,19 +43,13 @@ class BaseOptionsMenu extends MusicBeatSubstate
 
 	public var title:String;
 	public var rpcTitle:String;
-    public var newSound = FlxG.sound.playMusic(Paths.music('title'), 1, Bool);
-    override public function create()
-	{
-	    #if PRELOAD_ALL
-        newSound = true;
-	    #end
-
-        super.create();
-    }
 
 	public function new()
 	{
 		super();
+        #if PRELOAD_ALL
+        FlxG.sound.playMusic(Paths.music('title'), 1, true);
+        #end
 
 		if(title == null) title = 'Options';
 		if(rpcTitle == null) rpcTitle = 'Options Menu';
