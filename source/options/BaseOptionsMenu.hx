@@ -131,11 +131,10 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	}
     override public function create()
 	{
-	    super.create();
-	    
 	    #if PRELOAD_ALL
 	    FlxG.sound.playMusic(Paths.music('title'), 1, true);;
 	    #end
+	    super.create();
     }
 
 	public function addOption(option:Option) {
