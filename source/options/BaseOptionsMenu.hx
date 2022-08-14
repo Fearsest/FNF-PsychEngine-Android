@@ -47,10 +47,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
     override public function create()
 	{
 	    #if PRELOAD_ALL
-	   {
-	    FlxG.sound.playMusic(Paths.music('title'), 1, true);;
-	   }
+	   {FlxG.sound.playMusic(Paths.music('title'), 1, true)}
 	    #end
+
 	    super.create();
     }
 
